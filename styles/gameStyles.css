@@ -1,0 +1,25 @@
+body {
+    background: url(/images/gameBackground.jpg) no-repeat center center fixed;
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: cover;
+}
+
+.playerBox {
+    height: 200px;
+    width: 200px;
+    background-color: bisque;
+}
+
+.computerBox {
+    height: 200px;
+    width: 200px;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    
+}
