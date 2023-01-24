@@ -181,8 +181,24 @@ animals = [
     }
 ];
 
-let randomPlayerCard = [];
+let randomPlayerCard;
 let randomComputerCard;
+let combatLog;
+let playerBox;
+let playerAttack;
+let playerCardAttack;
+let playerCardImage;
+let playerCardDefense;
+let computerCardAttack;
+let computerCardImage;
+let computerCardDefense;
+let combatLogBox;
+let playerDefense;
+let computerAttack;
+let computerBox;
+let computerDefense;
+let counter = 0;
+
 
 function draw() {
     //pick random element from array
@@ -190,60 +206,72 @@ function draw() {
     randomComputerCard = animals[Math.floor(Math.random()*animals.length)];
 
     //create combat log
-    let combatLogBox = document.querySelector(".combatLogBox");
-    let combatLog = document.createElement("div");
+    combatLogBox = document.querySelector(".combatLogBox");
+    combatLog = document.createElement("div");
     combatLog.innerText = `${randomPlayerCard.name} vs. ${randomComputerCard.name}`;
     combatLogBox.appendChild(combatLog);
 
     //append ATTACK of random element (PLAYER)
-    let playerAttack = document.querySelector(".playerAttack");
-    let playerCardAttack = document.createElement("div");
+    playerAttack = document.querySelector(".playerAttack");
+    playerCardAttack = document.createElement("div");
     playerCardAttack.innerText = randomPlayerCard.attack;
     playerAttack.appendChild(playerCardAttack);
 
     //append IMG of random element (PLAYER)
-    let playerBox = document.querySelector(".playerBox");
-    let playerCardImage = document.createElement("img");
+    playerBox = document.querySelector(".playerBox");
+    playerCardImage = document.createElement("img");
     playerCardImage.src = randomPlayerCard.img;
     playerBox.appendChild(playerCardImage);
 
     //append DEFENSE of random element (PLAYER)
-    let playerStats = document.querySelector(".playerDefense");
-    let playerCardDefense = document.createElement("div");
+    playerDefense = document.querySelector(".playerDefense");
+    playerCardDefense = document.createElement("div");
     playerCardDefense.innerText = randomPlayerCard.defense;
-    playerStats.appendChild(playerCardDefense);
+    playerDefense.appendChild(playerCardDefense);
 
     //append ATTACK of random element (COMPUTER)
-    let computerAttack = document.querySelector(".computerAttack");
-    let computerCardAttack = document.createElement("div");
+    computerAttack = document.querySelector(".computerAttack");
+    computerCardAttack = document.createElement("div");
     computerCardAttack.innerText = randomComputerCard.attack;
     computerAttack.appendChild(computerCardAttack);
 
     //append IMG of random element (COMPUTER)
-    let computerBox = document.querySelector(".computerBox");
-    let computerCardImage = document.createElement("img");
+    computerBox = document.querySelector(".computerBox");
+    computerCardImage = document.createElement("img");
     computerCardImage.src = randomComputerCard.img;
     computerBox.appendChild(computerCardImage);
 
     //append DEFENSE of random element (COMPUTER)
-    let computerDefense = document.querySelector(".computerDefense");
-    let computerCardDefense = document.createElement("div");
+    computerDefense = document.querySelector(".computerDefense");
+    computerCardDefense = document.createElement("div");
     computerCardDefense.innerText = randomComputerCard.defense;
     computerDefense.appendChild(computerCardDefense);
-
-    return randomPlayerCard;
 }
 
 function fight() {
-    console.log(randomPlayerCard.attack);
-    console.log(randomComputerCard.attack);
+    //instant kill
+    if (randomPlayerCard.attack >= randomComputerCard.defense) {
+        combatLog.innerText = (`${randomPlayerCard.name} has won the duel!`);
+        computerCardAttack.remove();
+        computerCardImage.remove();
+        computerCardDefense.remove();
+        counter += 1;
+        console.log(counter);
+
+        //alert("Draw a new card!");
+    //damage
+    } else {
+        randomComputerCard.defense = randomComputerCard.defense - randomPlayerCard.attack;
+        computerCardDefense.innerText = randomComputerCard.defense;
+        if (randomComputerCard.defense <= 0) {
+            combatLog.innerText = (`${randomPlayerCard.name} has won the duel!`);
+            computerCardAttack.remove();
+            computerCardImage.remove();
+            computerCardDefense.remove();
+            //alert("Draw a new card!");
+        }
+    }
 }
 
 document.querySelector(".draw").addEventListener("click", draw);
 document.querySelector(".fight").addEventListener("click", fight);
-
-
-
-
-
-
