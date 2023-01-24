@@ -181,10 +181,13 @@ animals = [
     }
 ];
 
+let randomPlayerCard = [];
+let randomComputerCard;
+
 function draw() {
     //pick random element from array
-    let randomPlayerCard = animals[Math.floor(Math.random()*animals.length)];  
-    let randomComputerCard = animals[Math.floor(Math.random()*animals.length)];
+    randomPlayerCard = animals[Math.floor(Math.random()*animals.length)];  
+    randomComputerCard = animals[Math.floor(Math.random()*animals.length)];
 
     //create combat log
     let combatLogBox = document.querySelector(".combatLogBox");
@@ -228,12 +231,12 @@ function draw() {
     computerCardDefense.innerText = randomComputerCard.defense;
     computerDefense.appendChild(computerCardDefense);
 
-    console.log(randomPlayerCard);
-    console.log(randomComputerCard);
+    return randomPlayerCard;
 }
 
 function fight() {
-    if
+    console.log(randomPlayerCard.attack);
+    console.log(randomComputerCard.attack);
 }
 
 document.querySelector(".draw").addEventListener("click", draw);

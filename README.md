@@ -11,7 +11,7 @@ This is a zoo themed card game where the stronger animal wins.
 
 - Details of the duel will be visible in the combat logs.
 
-- The game will end if the player/computer won 5 duels.
+- The game will end if the player/computer won 3 duels.
 
 ## Backlog
 - The player will have a handful of animals and can select which one to send against the computer's animal. 
@@ -23,6 +23,7 @@ This is a zoo themed card game where the stronger animal wins.
 - Board can have multiple animals (2x3 or 2x5)
 - If the player/computer has no animal on the board, the player's/computer's health points will be attacked directly. 
 - The game will end if the player/computer has no remaining health points or the deck is empty.
+- Add shaking animation to the animal that got attacked
 
 ## Data structure
 _List of classes and methods_
