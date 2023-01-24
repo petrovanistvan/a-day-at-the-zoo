@@ -6,9 +6,16 @@ body {
     background-size: cover;
 }
 
-.playerBox {
+.flexContainer {
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.containerPlayer {
     height: 250px;
-    width: 200px;
+    width: auto;
     background-color: bisque;
     border-radius: 5%;
     display: flex;
@@ -16,19 +23,9 @@ body {
     align-items: center;
 }
 
-.computerBox {
-    height: 250px;
-    width: 200px;
-    background-color: bisque;
-    border-radius: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.combatLogBox {
+.containerLog {
     height: 300px;
-    width: 200px;
+    width: auto;
     background-color: bisque;
     border-radius: 5%;
     display: flex;
@@ -36,40 +33,22 @@ body {
     align-items: flex-start;
 }
 
-.flexContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-} 
-
-.containerLog {
-    height: 600px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    align-content: center;
-}
-
-.containerPlayer {
-    height: 600px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    align-content: center;
-} 
-
 .containerComputer {
-    height: 600px;
+    height: 250px;
+    width: auto;
+    background-color: bisque;
+    border-radius: 5%;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    align-content: center;
-} 
+    justify-content: center;
+    align-items: center;
+}
 
-.playerAttack {
+.playerAttack, .playerDefense, .computerAttack, .computerDefense {
     align-self: flex-end;
 }
 
-.playerDefense {
-    align-self: flex-end;
-} 
+.red {
+    color: red;
+    font-weight: bold;
+    font-size: 50px;
+}

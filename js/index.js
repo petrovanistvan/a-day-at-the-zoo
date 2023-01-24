@@ -186,11 +186,11 @@ function draw() {
     let randomPlayerCard = animals[Math.floor(Math.random()*animals.length)];  
     let randomComputerCard = animals[Math.floor(Math.random()*animals.length)];
 
-    //append IMG of random element (PLAYER)
-    let playerBox = document.querySelector(".playerBox");
-    let playerCardImage = document.createElement("img");
-    playerCardImage.src = randomPlayerCard.img;
-    playerBox.appendChild(playerCardImage);
+    //create combat log
+    let combatLogBox = document.querySelector(".combatLogBox");
+    let combatLog = document.createElement("div");
+    combatLog.innerText = `${randomPlayerCard.name} vs. ${randomComputerCard.name}`;
+    combatLogBox.appendChild(combatLog);
 
     //append ATTACK of random element (PLAYER)
     let playerAttack = document.querySelector(".playerAttack");
@@ -198,23 +198,29 @@ function draw() {
     playerCardAttack.innerText = randomPlayerCard.attack;
     playerAttack.appendChild(playerCardAttack);
 
+    //append IMG of random element (PLAYER)
+    let playerBox = document.querySelector(".playerBox");
+    let playerCardImage = document.createElement("img");
+    playerCardImage.src = randomPlayerCard.img;
+    playerBox.appendChild(playerCardImage);
+
     //append DEFENSE of random element (PLAYER)
     let playerStats = document.querySelector(".playerDefense");
     let playerCardDefense = document.createElement("div");
     playerCardDefense.innerText = randomPlayerCard.defense;
     playerStats.appendChild(playerCardDefense);
 
-    //append IMG of random element (COMPUTER)
-    let computerBox = document.querySelector(".computerBox");
-    let computerCardImage = document.createElement("img");
-    computerCardImage.src = randomComputerCard.img;
-    computerBox.appendChild(computerCardImage);
-
     //append ATTACK of random element (COMPUTER)
     let computerAttack = document.querySelector(".computerAttack");
     let computerCardAttack = document.createElement("div");
     computerCardAttack.innerText = randomComputerCard.attack;
     computerAttack.appendChild(computerCardAttack);
+
+    //append IMG of random element (COMPUTER)
+    let computerBox = document.querySelector(".computerBox");
+    let computerCardImage = document.createElement("img");
+    computerCardImage.src = randomComputerCard.img;
+    computerBox.appendChild(computerCardImage);
 
     //append DEFENSE of random element (COMPUTER)
     let computerDefense = document.querySelector(".computerDefense");
@@ -227,16 +233,13 @@ function draw() {
 }
 
 function fight() {
-    
+    if
 }
 
 document.querySelector(".draw").addEventListener("click", draw);
 document.querySelector(".fight").addEventListener("click", fight);
 
-let combatLogBox = document.querySelector(".combatLogBox");
-let combatLog = document.createElement("div");
-combatLog.innerText = "Combat Log";
-combatLogBox.appendChild(combatLog);
+
 
 
 
