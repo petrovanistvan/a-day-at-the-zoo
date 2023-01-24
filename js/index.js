@@ -182,18 +182,45 @@ animals = [
 ];
 
 function draw() {
+    //pick random element from array
     let randomPlayerCard = animals[Math.floor(Math.random()*animals.length)];  
     let randomComputerCard = animals[Math.floor(Math.random()*animals.length)];
 
+    //append IMG of random element (PLAYER)
     let playerBox = document.querySelector(".playerBox");
     let playerCardImage = document.createElement("img");
     playerCardImage.src = randomPlayerCard.img;
     playerBox.appendChild(playerCardImage);
 
+    //append ATTACK of random element (PLAYER)
+    let playerAttack = document.querySelector(".playerAttack");
+    let playerCardAttack = document.createElement("div");
+    playerCardAttack.innerText = randomPlayerCard.attack;
+    playerAttack.appendChild(playerCardAttack);
+
+    //append DEFENSE of random element (PLAYER)
+    let playerStats = document.querySelector(".playerDefense");
+    let playerCardDefense = document.createElement("div");
+    playerCardDefense.innerText = randomPlayerCard.defense;
+    playerStats.appendChild(playerCardDefense);
+
+    //append IMG of random element (COMPUTER)
     let computerBox = document.querySelector(".computerBox");
     let computerCardImage = document.createElement("img");
     computerCardImage.src = randomComputerCard.img;
     computerBox.appendChild(computerCardImage);
+
+    //append ATTACK of random element (COMPUTER)
+    let computerAttack = document.querySelector(".computerAttack");
+    let computerCardAttack = document.createElement("div");
+    computerCardAttack.innerText = randomComputerCard.attack;
+    computerAttack.appendChild(computerCardAttack);
+
+    //append DEFENSE of random element (COMPUTER)
+    let computerDefense = document.querySelector(".computerDefense");
+    let computerCardDefense = document.createElement("div");
+    computerCardDefense.innerText = randomComputerCard.defense;
+    computerDefense.appendChild(computerCardDefense);
 
     console.log(randomPlayerCard);
     console.log(randomComputerCard);
@@ -206,5 +233,11 @@ function fight() {
 document.querySelector(".draw").addEventListener("click", draw);
 document.querySelector(".fight").addEventListener("click", fight);
 
-document.write("<h1>test1234</h1>");
+let combatLogBox = document.querySelector(".combatLogBox");
+let combatLog = document.createElement("div");
+combatLog.innerText = "Combat Log";
+combatLogBox.appendChild(combatLog);
+
+
+
 

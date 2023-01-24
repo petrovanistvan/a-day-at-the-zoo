@@ -7,19 +7,69 @@ body {
 }
 
 .playerBox {
-    height: 200px;
+    height: 250px;
     width: 200px;
     background-color: bisque;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .computerBox {
-    height: 200px;
+    height: 250px;
     width: 200px;
-    background-color: black;
+    background-color: bisque;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container {
+.combatLogBox {
+    height: 300px;
+    width: 200px;
+    background-color: bisque;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flexContainer {
     display: flex;
     justify-content: space-around;
-    
+    align-items: flex-end;
+} 
+
+.containerLog {
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: center;
 }
+
+.containerPlayer {
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: center;
+} 
+
+.containerComputer {
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: center;
+} 
+
+.playerAttack {
+    align-self: flex-end;
+}
+
+.playerDefense {
+    align-self: flex-end;
+} 
