@@ -5,3 +5,14 @@ body {
     -o-background-size: cover; */
     background-size: cover;
 }
+
+.gameOver {
+    color: red;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.containerGameOver {
+    display: flex;
+    justify-content: center;
+}

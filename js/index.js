@@ -199,7 +199,6 @@ let computerBox;
 let computerDefense;
 let counter = 0;
 
-
 function draw() {
     //pick random element from array
     randomPlayerCard = animals[Math.floor(Math.random()*animals.length)];  
@@ -252,26 +251,36 @@ function fight() {
     //instant kill
     if (randomPlayerCard.attack >= randomComputerCard.defense) {
         combatLog.innerText = (`${randomPlayerCard.name} has won the duel!`);
+        playerCardAttack.remove();
+        playerCardImage.remove();
+        playerCardDefense.remove();
         computerCardAttack.remove();
         computerCardImage.remove();
         computerCardDefense.remove();
-        counter += 1;
-        console.log(counter);
-
-        //alert("Draw a new card!");
+        counter++;
+        counterBox = document.querySelector(".counterBox");
+        counterBox.innerHTML = counter;
+        if (counter === 3) {
+            window.location.href = "../website/end.html"
+        } 
     //damage
     } else {
         randomComputerCard.defense = randomComputerCard.defense - randomPlayerCard.attack;
         computerCardDefense.innerText = randomComputerCard.defense;
         if (randomComputerCard.defense <= 0) {
             combatLog.innerText = (`${randomPlayerCard.name} has won the duel!`);
-            computerCardAttack.remove();
-            computerCardImage.remove();
-            computerCardDefense.remove();
-            //alert("Draw a new card!");
+            counter++;
+            counterBox = document.querySelector(".counterBox");
+            counterBox.innerHTML = counter;
+            if (counter === 3) {
+                window.location.href = "../website/end.html"
+            } 
         }
     }
 }
 
 document.querySelector(".draw").addEventListener("click", draw);
 document.querySelector(".fight").addEventListener("click", fight);
+
+console.log
+
