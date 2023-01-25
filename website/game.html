@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="/styles/gameStyles.css">
 </head>
 <body>
-    <div>
-        <form action="./start.html">
-            <input type="submit" value="Restart the game" />
-        </form>
-        <button class="draw">Draw card</button>
-        <button class="fight">Fight</button>
-    </div>
 
-    <div class="containerCounter">
-        <div class="counterBox red"></div>
+    <div class="containerPlayerCounter">
+        <div class="playerCounterBox red"></div>
+    </div>
+    <div class="containerComputerCounter">
+        <div class="computerCounterBox red"></div>
     </div>
 
     <div class="flexContainer">
@@ -37,6 +33,12 @@
             <div class="computerDefense red"></div>
         </div>
     </div>
+
+    <div class="containerButton">
+        <button class="draw button">Draw a card!</button>
+        <button class="fight button">Fight!</button>
+    </div>
+
 
     <script src="/js/index.js"></script>
 </body>

@@ -197,7 +197,8 @@ let playerDefense;
 let computerAttack;
 let computerBox;
 let computerDefense;
-let counter = 0;
+let playerCounter = 0;
+let computerCounter = 0;
 
 function draw() {
     //pick random element from array
@@ -257,23 +258,58 @@ function fight() {
         computerCardAttack.remove();
         computerCardImage.remove();
         computerCardDefense.remove();
-        counter++;
-        counterBox = document.querySelector(".counterBox");
-        counterBox.innerHTML = counter;
-        if (counter === 3) {
+        playerCounter++;
+        playerCounterBox = document.querySelector(".playerCounterBox");
+        playerCounterBox.innerHTML = `Player: ${playerCounter}`;
+        if (playerCounter === 3) {
             window.location.href = "../website/end.html"
+            alert("You helped the animals to find the way back to their cages! Congrats!");
         } 
     //damage player->computer
     } else {
         randomComputerCard.defense = randomComputerCard.defense - randomPlayerCard.attack;
         computerCardDefense.innerText = randomComputerCard.defense;
+        //combatLog.innerText = (`${randomPlayerCard.name} did ${randomPlayerCard.attack} damage to ${randomComputerCard.name}!`);
         if (randomComputerCard.defense <= 0) {
-            combatLog.innerText = (`${randomPlayerCard.name} has won the duel!`);
-            counter++;
-            counterBox = document.querySelector(".counterBox");
-            counterBox.innerHTML = counter;
-            if (counter === 3) {
+            combatLog.innerText = (`${randomPlayerCard.name} has won the duel`);
+            playerCounter++;
+            playerCounterBox = document.querySelector(".playerCounterBox");
+            playerCounterBox.innerHTML = `Player: ${playerCounter}`;
+            if (playerCounter === 3) {
                 window.location.href = "../website/end.html"
+                alert("You helped the animals to find the way back to their cages! Congrats!");
+            } 
+        }
+    }
+    //instant kill computer->player
+    if (randomComputerCard.attack >= randomPlayerCard.defense) {
+        combatLog.innerText = (`${randomComputerCard.name} has won the duel!`);
+        playerCardAttack.remove();
+        playerCardImage.remove();
+        playerCardDefense.remove();
+        computerCardAttack.remove();
+        computerCardImage.remove();
+        computerCardDefense.remove();
+        computerCounter++;
+        computerCounterBox = document.querySelector(".computerCounterBox");
+        computerCounterBox.innerHTML = `Colleague: ${computerCounter}`;
+        if (computerCounter === 3) {
+            window.location.href = "../website/end.html"
+            alert("Thanks to your colleague, the animals went back to their cages.");
+        } 
+    //damage computer->player
+    } else {
+        randomPlayerCard.defense = randomPlayerCard.defense - randomComputerCard.attack;
+        playerCardDefense.innerText = randomPlayerCard.defense;
+        //combatLog.innerText = (`${randomComputerCard.name} did ${randomComputerCard.attack} damage to ${randomPlayerCard.name}!`);
+        if (randomPlayerCard.defense <= 0) {
+            combatLog.innerText = (`${randomComputerCard.name} has won the duel!`);
+            computerCounter++;
+            computerCounterBox = document.querySelector(".computerCounterBox");
+            computerCounterBox.innerHTML = `Colleague: ${computerCounter}`;
+            if (computerCounter === 3) {
+                window.location.href = "../website/end.html"
+                alert("Thanks to your colleague, the animals went back to their cages.");
             } 
         }
     }
@@ -281,6 +317,3 @@ function fight() {
 
 document.querySelector(".draw").addEventListener("click", draw);
 document.querySelector(".fight").addEventListener("click", fight);
-
-console.log
-

@@ -24,6 +24,7 @@ This is a zoo themed card game where the stronger animal wins.
 - If the player/computer has no animal on the board, the player's/computer's health points will be attacked directly. 
 - The game will end if the player/computer has no remaining health points or the deck is empty.
 - Add shaking animation to the animal that got attacked
+- Player can enter his/her name and it will be displayed during the game
 
 ## Data structure
 _List of classes and methods_
