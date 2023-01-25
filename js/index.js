@@ -248,7 +248,7 @@ function draw() {
 }
 
 function fight() {
-    //instant kill
+    //instant kill player->computer
     if (randomPlayerCard.attack >= randomComputerCard.defense) {
         combatLog.innerText = (`${randomPlayerCard.name} has won the duel!`);
         playerCardAttack.remove();
@@ -263,7 +263,7 @@ function fight() {
         if (counter === 3) {
             window.location.href = "../website/end.html"
         } 
-    //damage
+    //damage player->computer
     } else {
         randomComputerCard.defense = randomComputerCard.defense - randomPlayerCard.attack;
         computerCardDefense.innerText = randomComputerCard.defense;
