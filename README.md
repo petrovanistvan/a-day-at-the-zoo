@@ -1,6 +1,6 @@
 # A day at the zoo
 
-[Click here to see deployed game](http://github.com)
+[Click here to see deployed game](https://petrovanistvan.github.io/a-day-at-the-zoo/)
 
 ## Description
 This is a zoo themed card game where the stronger animal wins.
@@ -42,6 +42,6 @@ Implement logic to handle draws
 ## Links
 
 - [Trello Link](https://trello.com/b/jSezAEhi/1st-project)
-- [Slides Link](http://slides.com)
+- [Slides Link](https://slides.com/ispetrov/palette)
 - [Github repository Link](https://github.com/petrovanistvan/a-day-at-the-zoo)
-- [Deployment Link](http://github.com)
+- [Deployment Link](https://petrovanistvan.github.io/a-day-at-the-zoo/)
