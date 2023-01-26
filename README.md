@@ -36,16 +36,8 @@ _List of states (views) of your game_
 
 
 ## Task
-- Come up with the design and the layout of the game.
-- Start page with a "start" button and instructions.
-- Game page.
-- "Game over" page with restart button.
-- Create an array of cards.
-- Create the board with two rows, one for your animal(s) and one for the computer's animal(s).
-- Choose animals randomly with a press of a button.
-- Make the animals duel with a press of another button.
-- Details of the duel must be displayed.
-- Make the health of the player/computer decrease if there is no animal on board.
+Implement logic to handle draws
+Add music
 
 
 ## Links

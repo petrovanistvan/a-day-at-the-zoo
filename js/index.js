@@ -201,51 +201,53 @@ let playerCounter = 0;
 let computerCounter = 0;
 
 function draw() {
-    //pick random element from array
-    randomPlayerCard = animals[Math.floor(Math.random()*animals.length)];  
-    randomComputerCard = animals[Math.floor(Math.random()*animals.length)];
+    if (playerAttack === undefined) {
+        //pick random element from array
+        randomPlayerCard = animals[Math.floor(Math.random()*animals.length)];  
+        randomComputerCard = animals[Math.floor(Math.random()*animals.length)];
 
-    //create combat log
-    combatLogBox = document.querySelector(".combatLogBox");
-    combatLog = document.createElement("div");
-    combatLog.innerText = `${randomPlayerCard.name} vs. ${randomComputerCard.name}`;
-    combatLogBox.appendChild(combatLog);
+        //create combat log
+        combatLogBox = document.querySelector(".combatLogBox");
+        combatLog = document.createElement("div");
+        combatLog.innerText = `${randomPlayerCard.name} vs. ${randomComputerCard.name}`;
+        combatLogBox.appendChild(combatLog);
 
-    //append ATTACK of random element (PLAYER)
-    playerAttack = document.querySelector(".playerAttack");
-    playerCardAttack = document.createElement("div");
-    playerCardAttack.innerText = randomPlayerCard.attack;
-    playerAttack.appendChild(playerCardAttack);
+        //append ATTACK of random element (PLAYER)
+        playerAttack = document.querySelector(".playerAttack");
+        playerCardAttack = document.createElement("div");
+        playerCardAttack.innerText = randomPlayerCard.attack;
+        playerAttack.appendChild(playerCardAttack);
 
-    //append IMG of random element (PLAYER)
-    playerBox = document.querySelector(".playerBox");
-    playerCardImage = document.createElement("img");
-    playerCardImage.src = randomPlayerCard.img;
-    playerBox.appendChild(playerCardImage);
+        //append IMG of random element (PLAYER)
+        playerBox = document.querySelector(".playerBox");
+        playerCardImage = document.createElement("img");
+        playerCardImage.src = randomPlayerCard.img;
+        playerBox.appendChild(playerCardImage);
 
-    //append DEFENSE of random element (PLAYER)
-    playerDefense = document.querySelector(".playerDefense");
-    playerCardDefense = document.createElement("div");
-    playerCardDefense.innerText = randomPlayerCard.defense;
-    playerDefense.appendChild(playerCardDefense);
+        //append DEFENSE of random element (PLAYER)
+        playerDefense = document.querySelector(".playerDefense");
+        playerCardDefense = document.createElement("div");
+        playerCardDefense.innerText = randomPlayerCard.defense;
+        playerDefense.appendChild(playerCardDefense);
 
-    //append ATTACK of random element (COMPUTER)
-    computerAttack = document.querySelector(".computerAttack");
-    computerCardAttack = document.createElement("div");
-    computerCardAttack.innerText = randomComputerCard.attack;
-    computerAttack.appendChild(computerCardAttack);
+        //append ATTACK of random element (COMPUTER)
+        computerAttack = document.querySelector(".computerAttack");
+        computerCardAttack = document.createElement("div");
+        computerCardAttack.innerText = randomComputerCard.attack;
+        computerAttack.appendChild(computerCardAttack);
 
-    //append IMG of random element (COMPUTER)
-    computerBox = document.querySelector(".computerBox");
-    computerCardImage = document.createElement("img");
-    computerCardImage.src = randomComputerCard.img;
-    computerBox.appendChild(computerCardImage);
+        //append IMG of random element (COMPUTER)
+        computerBox = document.querySelector(".computerBox");
+        computerCardImage = document.createElement("img");
+        computerCardImage.src = randomComputerCard.img;
+        computerBox.appendChild(computerCardImage);
 
-    //append DEFENSE of random element (COMPUTER)
-    computerDefense = document.querySelector(".computerDefense");
-    computerCardDefense = document.createElement("div");
-    computerCardDefense.innerText = randomComputerCard.defense;
-    computerDefense.appendChild(computerCardDefense);
+        //append DEFENSE of random element (COMPUTER)
+        computerDefense = document.querySelector(".computerDefense");
+        computerCardDefense = document.createElement("div");
+        computerCardDefense.innerText = randomComputerCard.defense;
+        computerDefense.appendChild(computerCardDefense);
+    }  
 }
 
 function fight() {
@@ -258,6 +260,7 @@ function fight() {
         computerCardAttack.remove();
         computerCardImage.remove();
         computerCardDefense.remove();
+        playerAttack = undefined;
         playerCounter++;
         playerCounterBox = document.querySelector(".playerCounterBox");
         playerCounterBox.innerHTML = `Player: ${playerCounter}`;
@@ -275,6 +278,7 @@ function fight() {
             playerCounter++;
             playerCounterBox = document.querySelector(".playerCounterBox");
             playerCounterBox.innerHTML = `Player: ${playerCounter}`;
+            playerAttack = undefined;
             if (playerCounter === 3) {
                 window.location.href = "../website/end.html"
                 alert("You helped the animals to find the way back to their cages! Congrats!");
@@ -290,6 +294,7 @@ function fight() {
         computerCardAttack.remove();
         computerCardImage.remove();
         computerCardDefense.remove();
+        playerAttack = undefined;
         computerCounter++;
         computerCounterBox = document.querySelector(".computerCounterBox");
         computerCounterBox.innerHTML = `Colleague: ${computerCounter}`;
@@ -307,6 +312,7 @@ function fight() {
             computerCounter++;
             computerCounterBox = document.querySelector(".computerCounterBox");
             computerCounterBox.innerHTML = `Colleague: ${computerCounter}`;
+            playerAttack = undefined;
             if (computerCounter === 3) {
                 window.location.href = "../website/end.html"
                 alert("Thanks to your colleague, the animals went back to their cages.");
@@ -317,3 +323,10 @@ function fight() {
 
 document.querySelector(".draw").addEventListener("click", draw);
 document.querySelector(".fight").addEventListener("click", fight);
+
+//music
+function music() {
+    new Audio("../music/Y2Mate.is - Let's Go To The Zoo  Animal Song for Kids-OwRmivbNgQk-160k-1654579498232.mp3").play();
+}
+
+document.querySelector(".start").addEventListener("click", music);
