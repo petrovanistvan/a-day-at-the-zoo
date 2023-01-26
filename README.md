@@ -9,7 +9,7 @@ This is a zoo themed card game where the stronger animal wins.
 ## MVP
 - 1v1 animal duels where the animal with an attack points higher than its opponent's health points wins. Both the player's and the computer's animals are being randomly chosen from an array of animals. The deck of cards (number of animals) is limited.
 
-- Details of the duel will be visible in the combat logs.
+- Winner of the duel will be visible in the combat logs.
 
 - The game will end if the player/computer won 3 duels.
 
@@ -37,7 +37,6 @@ _List of states (views) of your game_
 
 ## Task
 Implement logic to handle draws
-Add music
 
 
 ## Links
