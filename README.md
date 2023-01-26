@@ -36,7 +36,8 @@ _List of states (views) of your game_
 
 
 ## Task
-Implement logic to handle draws
+- Implement logic to handle draws
+- Make it responsive
 
 
 ## Links
