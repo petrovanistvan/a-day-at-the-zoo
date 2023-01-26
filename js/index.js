@@ -265,7 +265,7 @@ function fight() {
         playerCounterBox = document.querySelector(".playerCounterBox");
         playerCounterBox.innerHTML = `Player: ${playerCounter}`;
         if (playerCounter === 3) {
-            window.location.href = "./website/end.html"
+            window.location.href = "./end.html"
             alert("You helped the animals to find the way back to their cages! Congrats!");
         } 
     //damage player->computer
@@ -280,7 +280,7 @@ function fight() {
             playerCounterBox.innerHTML = `Player: ${playerCounter}`;
             playerAttack = undefined;
             if (playerCounter === 3) {
-                window.location.href = "./website/end.html"
+                window.location.href = "./end.html"
                 alert("You helped the animals to find the way back to their cages! Congrats!");
             } 
         }
@@ -299,7 +299,7 @@ function fight() {
         computerCounterBox = document.querySelector(".computerCounterBox");
         computerCounterBox.innerHTML = `Colleague: ${computerCounter}`;
         if (computerCounter === 3) {
-            window.location.href = "./website/end.html"
+            window.location.href = "./end.html"
             alert("Thanks to your colleague, the animals went back to their cages.");
         } 
     //damage computer->player
@@ -314,7 +314,7 @@ function fight() {
             computerCounterBox.innerHTML = `Colleague: ${computerCounter}`;
             playerAttack = undefined;
             if (computerCounter === 3) {
-                window.location.href = "./website/end.html"
+                window.location.href = "./end.html"
                 alert("Thanks to your colleague, the animals went back to their cages.");
             } 
         }
